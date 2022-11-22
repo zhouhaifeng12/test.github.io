@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 注入普通值 -->
+    <bean id="employee" class="cn.tzz._03.di.Employee">
+        <property name="name" value="小张"/>
+        <property name="age" value="18"/>
+        <property name="salary" value="1500"/>
+    </bean>
+
+    <!-- 注入一个bean  相当于注入一个对象 -->
+    <!-- 配置employeeDao的bean -->
+    <bean id="employeeDao" class="cn.tzz._03.di.EmployeeDao"/>
+    <!-- 配置employeeService的bean -->
+    <bean id="employeeService" class="cn.tzz._03.di.EmployeeService">
+        <!--
+            name="写的属性名字" ref="注入BEAN 的时候使用的另一个容器的BEAN的ID值"
+        -->
+        <!-- value是普通值 --><!-- ref是对象 -->
+        <property name="elDAO" ref="employeeDao"></property>
+    </bean>
+</beans>

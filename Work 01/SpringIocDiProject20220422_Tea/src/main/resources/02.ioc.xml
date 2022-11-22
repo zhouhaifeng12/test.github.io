@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 告诉Spring 帮我们创建对象 并设置什么属性 -->
+    <bean id="Cat1" class="cn.tzz._02.ioc.Cat1"/>
+    <bean id="Cat2" class="cn.tzz._02.ioc.Cat2"/>
+    <bean id="MyDataSource" class="cn.tzz._02.ioc.MyDataSource" scope="singleton" init-method="init"
+          destroy-method="destroy"/>
+</beans>
